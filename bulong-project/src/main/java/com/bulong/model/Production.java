@@ -1,6 +1,7 @@
 package main.java.com.bulong.model;
 
 import java.util.Map;
+/** 
 
 public class Production {
 
@@ -23,3 +24,4 @@ public class Production {
     
     
 }
+*/

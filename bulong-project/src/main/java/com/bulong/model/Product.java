@@ -1,5 +1,7 @@
 package main.java.com.bulong.model;
 
+import java.util.Date;
+
 public class Product {
 
     private Long id;
@@ -36,10 +38,10 @@ public class Product {
         return isDeleted;
     }
 
-    public setProductCode(String newProductCode) {
+    public void setProductCode(String newProductCode) {
         this.productCode = newProductCode;
     }
-    public setProductName(String newProductName) {
+    public void setProductName(String newProductName) {
         this.productName = newProductName;
     }
 

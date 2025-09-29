@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main.java.com.bulong.mapper.ProductMapper">
+
+    <resultMap id="ProductResultMap" type="com.bulong.model.Product">
+        <id column="id" property="id"/>
+        <result column="产品编号" property="productCode"/>
+        <result column="产品名称" property="productName"/>
+        <result column="创建时间" property="createTime"/>
+        <result column="理论门幅" property="width"/>
+        <result column="理论密度" property="density"/>
+        <result column="理论间隔" property="blank"/>
+        <result column="是否有效" property="isDeleted"/>
+    </resultMap>
+
+    <select id="createTable">
+    CREATE TABLE IF NOT EXISTS 产品表 (
+        id VARCHAR(30) PRIMARY KEY,
+        产品编号 VARCHAR(30),
+        产品名称 VARCHAR(30),
+        理论门幅 DECIMAL(6,2),
+        理论密度 DECIMAL(6,2),
+        理论间隔 DECIMAL(6,2),
+        创建时间 DATETIME,
+        是否有效 TINYINT(1) DEFAULT 1
+    );
+    </select>
+
+    <insert id="insertProduct" parameterType="com.bulong.model.Product">
+    INSERT INTO 产品表 (id, 产品编号, 产品名称)
+    VALUES (#{id}, #{productCode}, #{productName})
+    </insert>
+
+    <update id="updateProduct">
+
+    </update>
+
+
+</mapper>
